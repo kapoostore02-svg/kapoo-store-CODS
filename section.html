@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>القسم - KAPOO STORE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="importmap">
+      {
+        "imports": {
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="section.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <div class="center-content">
+        <div class="section-view">
+          <div class="section-header">
+            <div class="section-texts">
+              <div id="section-greeting" class="section-greeting"></div>
+              <div id="section-name" class="section-name"></div>
+            </div>
+            <button id="back-button" class="back-btn">رجوع</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="codes-table">
+              <thead>
+                <tr>
+                  <th>م</th>
+                  <th>الكود</th>
+                  <th>نسخ</th>
+                </tr>
+              </thead>
+              <tbody id="codes-tbody"></tbody>
+            </table>
+            <div id="no-codes-message" class="no-codes-message" hidden>
+              لا توجد أكواد متاحة لهذا القسم حالياً.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

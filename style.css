@@ -1,0 +1,309 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #050608;
+  color: #f5f5f5;
+}
+
+body {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.center-content {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  min-height: 52px;
+}
+
+.typing-text {
+  font-size: 40px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #e0ffff, #87cefa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+
+
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.code-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #22252b;
+  color: #f5f5f5;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-size: 240% 240%;
+  animation: gradientShift 8s ease infinite;
+  transition:
+    transform 0.08s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* 1/ قسم فري فاير: أزرق + أحمر */
+.code-btn:nth-child(1) {
+  background-image: linear-gradient(135deg, #0d47a1, #b71c1c);
+}
+
+/* 2/ قسم ببجي: أحمر + أخضر */
+.code-btn:nth-child(2) {
+  background-image: linear-gradient(135deg, #c62828, #2e7d32);
+}
+
+/* 3/ قسم طرق وثغرات: أحمر + أزرق داكن */
+.code-btn:nth-child(3) {
+  background-image: linear-gradient(135deg, #d32f2f, #283593);
+}
+
+/* 4/ قسم الشحن: أزرق + أخضر */
+.code-btn:nth-child(4) {
+  background-image: linear-gradient(135deg, #1565c0, #43a047);
+}
+
+/* 5/ قسم تصميم: أزرق + أصفر */
+.code-btn:nth-child(5) {
+  background-image: linear-gradient(135deg, #1976d2, #fdd835);
+}
+
+.code-btn:active {
+  transform: scale(0.97);
+  filter: brightness(0.95);
+}
+
+.code-btn:focus-visible {
+  box-shadow: 0 0 0 2px #ffb74d99;
+  border-color: #ffb74dcc;
+}
+
+.code-btn:hover {
+  filter: brightness(1.08);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.section-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section-greeting {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section-name {
+  font-size: 14px;
+  color: #9ea3ad;
+}
+
+.back-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #30333a;
+  background: #111319;
+  color: #f5f5f5;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    transform 0.08s ease,
+    border-color 0.15s ease;
+}
+
+.back-btn:active {
+  transform: scale(0.97);
+  background: #181b23;
+}
+
+.back-btn:hover {
+  border-color: #4a90e2;
+}
+
+.table-wrapper {
+  width: 100%;
+  background: #090b10;
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px solid #22252b;
+  overflow: hidden;
+}
+
+.codes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.codes-table th,
+.codes-table td {
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.codes-table thead {
+  background: #11141b;
+}
+
+.codes-table th {
+  font-weight: 600;
+  color: #d7dce5;
+}
+
+.codes-table tbody tr:nth-child(odd) {
+  background: #0c0f16;
+}
+
+.codes-table tbody tr:nth-child(even) {
+  background: #0a0d14;
+}
+
+.code-cell {
+  font-size: 16px;
+}
+
+.codes-table tbody tr:hover {
+  background: #151924;
+}
+
+.copy-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #e5e7eb;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.08s ease,
+    color 0.15s ease;
+}
+
+.copy-btn:active {
+  transform: scale(0.96);
+}
+
+.copy-btn:hover {
+  background: #1f2937;
+  border-color: #4b5563;
+}
+
+.copy-btn.copied {
+  background: #065f46;
+  border-color: #10b981;
+  color: #ecfdf5;
+}
+
+.copy-btn.error {
+  background: #7f1d1d;
+  border-color: #f97373;
+  color: #fee2e2;
+}
+
+.copied-label {
+  font-size: 12px;
+  color: #10b981;
+}
+
+.no-codes-message {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+/* Mobile-first: keep everything in one screen without scroll */
+@media (min-height: 620px) {
+  .center-content {
+    gap: 28px;
+  }
+
+  .typing-text {
+    font-size: 46px;
+  }
+
+  .code-btn {
+    padding: 14px 18px;
+    font-size: 17px;
+  }
+
+  .section-greeting {
+    font-size: 20px;
+  }
+}
+
